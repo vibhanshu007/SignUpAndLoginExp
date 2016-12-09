@@ -34,6 +34,7 @@
             android:layout_marginTop="@dimen/eight_dp">
 
             <EditText
+                android:id="@+id/signup_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/name"
@@ -49,6 +50,7 @@
             android:layout_marginTop="@dimen/eight_dp">
 
             <EditText
+                android:id="@+id/signup_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email_id"
@@ -63,7 +65,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp">
 
-            <EditText android:id="@+id/input_password"
+            <EditText android:id="@+id/singup_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -71,6 +73,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/sinup_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"

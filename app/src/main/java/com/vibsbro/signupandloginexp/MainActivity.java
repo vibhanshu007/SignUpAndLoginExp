@@ -13,9 +13,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final int REQUEST_SIGNUP = 0;
 
-    EditText user_id, password;
-    Button login_button;
-    TextView sign_up_link;
+    private EditText user_id, password;
+    private Button login_button;
+    private TextView sign_up_link;
 
 
     @Override
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivityForResult(intent, REQUEST_SIGNUP);
 
                 break;
+            default:
         }
 
     }
