@@ -11,4 +11,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.vibsbro.signupandloginexp.HomeActivity">
 
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/logout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Login"/>
+
 </RelativeLayout>
