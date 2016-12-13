@@ -12,7 +12,6 @@ import android.util.Log;
  */
 
 public class DbHelper extends SQLiteOpenHelper {
-
     public static final String TAG = DbHelper.class.getSimpleName();
     public static final String DB_NAME = "singup_login.db";
     public static final String DB_USER_TABLE = "user";
@@ -20,14 +19,21 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String DB_COL_EMAIL = "email";
     public static final String DB_COL_PASSWORD = "password";
     public static final int DB_VERSION = 1;
-
     public static final String CREATE_TABLE_USERS = "CREATE TABLE " + DB_USER_TABLE + "(" + DB_COL_NAME +
             " INTEGER PRIMARY KEY AUTOINCREMENT," + DB_COL_EMAIL + " TEXT," + DB_COL_PASSWORD + " TEXT );";
+    private static DbHelper dbHelper;
 
     public DbHelper(Context context)
 
     {
         super(context, DB_NAME, null, DB_VERSION);
+    }
+
+    public static DbHelper getInstance(Context context){
+        if (null ==dbHelper){
+            dbHelper=new DbHelper(context);
+        }
+        return dbHelper;
     }
 
     @Override

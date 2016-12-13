@@ -17,7 +17,7 @@ public class SingUpActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sing_up);
-        dbHelper = new DbHelper(this);
+        dbHelper =t;
         singup_name = (EditText) findViewById(R.id.signup_name);
         singup_email = (EditText) findViewById(R.id.signup_email);
         singup_password = (EditText) findViewById(R.id.singup_password);

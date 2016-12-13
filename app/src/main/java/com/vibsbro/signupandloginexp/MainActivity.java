@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dbHelper = new DbHelper(this);
+        dbHelper =DbHelper.getInstance(this);
         session = new Session(getApplicationContext());
         login_button = (Button) findViewById(R.id.button_login);
         sign_up_link = (TextView) findViewById(R.id.linkSingUp);
