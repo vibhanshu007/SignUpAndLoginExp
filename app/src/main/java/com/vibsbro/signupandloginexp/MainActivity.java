@@ -3,6 +3,7 @@ package com.vibsbro.signupandloginexp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         dbHelper = new DbHelper(this);
-        session = new Session(this);
+        session = new Session(getApplicationContext());
         login_button = (Button) findViewById(R.id.button_login);
         sign_up_link = (TextView) findViewById(R.id.linkSingUp);
         et_email = (EditText) findViewById(R.id.input_user_name);
@@ -40,8 +41,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(MainActivity.this,HomeActivity.class));
             finish();
         }
-
-
     }
 
     @Override
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.linkSingUp:
 
-                Intent intent = new Intent(getApplicationContext(), SingUpActivity.class);
+                Intent intent = new Intent(MainActivity.this, SingUpActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
 
                 break;
@@ -67,8 +66,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void login(){
         String email = et_email.getText().toString();
         String pass = et_password.getText().toString();
-        session.setLogIn(true);
+        //session.setLogIn(true);
         if (dbHelper.getUser(email,pass)){
+            Log.e("@@@@@@@@@@@@@","@@@@@@@@");
+            session.setLogIn(true);
             startActivity(new Intent (MainActivity.this,HomeActivity.class));
             finish();
         }else {

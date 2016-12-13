@@ -16,15 +16,17 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String TAG = DbHelper.class.getSimpleName();
     public static final String DB_NAME = "singup_login.db";
     public static final String DB_USER_TABLE = "user";
-    public static final String DB_COL_NAME = "_name";
+    public static final String DB_COL_NAME = "name";
     public static final String DB_COL_EMAIL = "email";
     public static final String DB_COL_PASSWORD = "password";
     public static final int DB_VERSION = 1;
 
-    public static final String CREATE_TABLE_USERS = "CREATE TABLE" + DB_USER_TABLE + "(" + DB_COL_NAME +
-            "INTEGER PRIVATE KEY AUTOINCREMENT," + DB_COL_EMAIL + "TEXT" + DB_COL_PASSWORD + "TEXT";
+    public static final String CREATE_TABLE_USERS = "CREATE TABLE " + DB_USER_TABLE + "(" + DB_COL_NAME +
+            " INTEGER PRIMARY KEY AUTOINCREMENT," + DB_COL_EMAIL + " TEXT," + DB_COL_PASSWORD + " TEXT );";
 
-    public DbHelper(Context context) {
+    public DbHelper(Context context)
+
+    {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
@@ -54,8 +56,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public boolean getUser(String email,String pass){
 
-        String selectQueary = "select * from" + DB_USER_TABLE + " where " + DB_COL_EMAIL + "=" + "'"
-                + email + "'" +  "and" + DB_COL_PASSWORD + "=" + "'" +pass+ "'";
+        String selectQueary = "select * from " + DB_USER_TABLE + " where " + DB_COL_EMAIL + "=" + "'"
+                + email + "'" +  " and " + DB_COL_PASSWORD + "=" + "'" +pass+ "';";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQueary,null);

@@ -27,6 +27,6 @@ public class Session {
 
     public boolean logedIn(){
 
-        return sharedPreferences.getBoolean("LogIn Mode" ,false);
+        return sharedPreferences.getBoolean("LogedIN" ,false);
     }
 }

@@ -3,6 +3,7 @@ package com.vibsbro.signupandloginexp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,8 +16,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        session = new Session(this);
+        Log.e("***********","*****");
+        session = new Session(getApplicationContext());
         if (!session.logedIn()){
             logOut();
         }
@@ -27,7 +28,6 @@ public class HomeActivity extends AppCompatActivity {
                 logOut();
             }
         });
-
     }
 
     public void logOut(){
