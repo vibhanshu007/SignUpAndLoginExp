@@ -21,13 +21,13 @@ public class HomeActivity extends AppCompatActivity {
         if (!session.logedIn()){
             logOut();
         }
-        button_logOut = (Button) findViewById(R.id.logout_button);
-        button_logOut.setOnClickListener(new View.OnClickListener() {
+        //button_logOut = (Button) findViewById(R.id.logout_button);
+        /*button_logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 logOut();
             }
-        });
+        });*/
     }
 
     public void logOut(){
