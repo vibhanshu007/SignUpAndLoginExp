@@ -2,6 +2,7 @@ package com.vibsbro.signupandloginexp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -35,9 +36,11 @@ public class HomeActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         actionBar = getSupportActionBar();
-        //actionBar.setHomeAsUpIndicator();
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         drawerLayout = (DrawerLayout) findViewById(R.id.activity_home);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -76,7 +79,8 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            // TODO: 15/12/16 start....from....here.. 
+            // TODO: 15/12/16 start....from....here..
+
         }
         return true;
     }
